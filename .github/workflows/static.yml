@@ -29,19 +29,15 @@ jobs:
           node-version: '18'
           cache: 'npm'
       - name: Install dependencies
-        run: |
-          cd bank-of-aztech-frontend
-          npm ci
+        run: npm ci
       - name: Build
-        run: |
-          cd bank-of-aztech-frontend
-          npm run build
+        run: npm run build
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './bank-of-aztech-frontend/dist'
+          path: './dist'
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v4 
